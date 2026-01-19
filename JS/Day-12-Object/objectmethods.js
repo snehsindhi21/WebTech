@@ -1,0 +1,11 @@
+//! Object Static Methods
+//~ 1. Object.keys()
+//~ 2. Object.values()
+//~ 3. Object.assign()
+//~ 4. Object.entries()
+//~ 5. Object.fromEntries()
+//~ 6. Object.seal()
+//~ 7. Object.isSealed()
+//~ 8. Object.freeze()
+//~ 9. Object.isFrozen()
+//~ 10. Object.hasOwn()

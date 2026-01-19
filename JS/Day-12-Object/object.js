@@ -45,3 +45,23 @@ console.log(person2);
 person2.age = 31;
 console.log(person2);
 
+//! How to access the array elements in an object?
+let student = {
+    name: "Alice",
+    age: 22,
+    subjects: ["Math", "Science", "History"]
+};
+console.log(student.subjects[1]); // Accessing "Science"
+
+//! What is methods in Object?
+//* A simple javascript function which is stored inside in key of an object is called as method of an object.
+let laptop ={
+    brand: "Lenovo",
+    model: "LOQ16",
+    Gaming:function(){
+        console.log("This laptop is good for gaming");
+    }
+};
+console.log(laptop);
+laptop.Gaming(); // Calling the method of an object
+
