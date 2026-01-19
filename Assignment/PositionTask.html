@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+        }
+        .bgimg{
+            background-image: url('https://preprodtsbstorage.blob.core.windows.net/cms/uploads/BG_WEB_08b7ce409f.png');
+            height: 300px;
+            margin: 50px;
+            background-position: center;        
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+        }
+        #coffee{
+            position: absolute;
+            width: 150px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .bgimg:hover{
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            transform: scale(1.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        #star{
+            position: absolute;
+            top : 30px; 
+            left : 200px;
+            width: 100%;
+            text-align: left;
+            font-size: 20px;
+            color: white;
+            
+        }
+        h1{
+            position: absolute;
+            top: 80px;
+            left: 200px;
+            width: 100%;
+            text-align: left;
+            font-size: 30px;
+            color: white;
+            font-weight: bold;
+        }
+        p{
+            position: absolute;
+            top: 130px;
+            left: 200px;
+            width: 60%;
+            text-align: left;
+            font-size: 16px;
+            color: white;
+        }
+        button{
+            width: 200px;
+            height: 55px;
+            position: absolute;
+            bottom: 50px;
+            right: 100px;
+            padding: 10px 20px;
+            font-size: 14px;
+            color: white;
+            background-color: #00704A;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #005f36;
+            transform: scale(1.02); 
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        #tnc{
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 12px;
+            color: white;
+        }
+        #arrow1{
+            width: 50px;
+            height: auto;
+            margin-left: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 180px;
+            clip-path: circle(50%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            
+        }
+        #arrow2{
+            width: 50px;
+            height: auto;
+            margin-right: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 180px;
+            right: 0;
+            clip-path: circle(50%);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            rotate: 180deg;
+        }
+        .arrow:hover{
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            transform: scale(1.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="bgimg">
+        <img src="https://preprodtsbstorage.blob.core.windows.net/cms/uploads/ASSET_aad6872b43.png" alt="" id="coffee">
+        <div id="star">Startbucks</div>
+        <h1>Beverage Subscription</h1>
+        <p>Starbucks Subscription is Back! Sip Your Favourites for Less. Tap for Details. T&C Apply.</p>
+        <button>Know More</button>
+        <div id="tnc">*T&C Apply</div>
+    </div>
+    <div>
+        <img src="../HTML/Assets/image2.png" alt="arrow" id="arrow1" class="arrow">
+    </div>
+    <div>
+        <img src="../HTML/Assets/image2.png" alt="arrow" id="arrow2" class="arrow">
+    </div>
+</body>
+</html>

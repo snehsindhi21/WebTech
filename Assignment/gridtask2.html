@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .container{
+            height: 100vh;
+            width: 100%;
+            background-color: beige;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+        }
+        .inner1{
+            height: 100%;width: 100%;
+            background-color: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .para{
+            height: 400px;
+            width: 80%;
+            /* background-color: blue; */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            font-size: 30px;
+            border-radius: 20px;
+            box-shadow: 3px 5px 3px wheat;
+
+        }
+        h1{
+            font-family: 'Times New Roman', Times, serif;
+        }
+        li{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 25px;
+            margin: 30px;
+        }
+        ul{
+            list-style: none;
+        }
+        li::before{
+            content: "🍁";
+        }
+        p{
+            font-family: cursive;
+            padding-left: 25px;
+            padding-top: 20px;
+            font-size: 18px;
+        }
+        .inner2{
+            height: 100%;
+            width: 100%;
+            background-color: black;
+            display: grid;
+            gap: 5px;
+            padding: 5px;
+            grid-template-areas: "mou mou oce oce"
+                                "mou mou oce oce"
+                                "wat isl hill bea"
+                                "wat isl for for"
+                                "wat rain for for"
+                                "des vol gl land";
+        }
+        .grid-items{
+            background-color: wheat;
+            border: 1px solid black;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border-radius: 10px; */
+            font-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            
+        }
+        #grid-items1{
+            background-image: url(https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg);
+            grid-area: mou;
+        }
+        #grid-items2{
+            background-image: url(https://images.pexels.com/photos/189349/pexels-photo-189349.jpeg);
+            grid-area:oce;
+        }
+        #grid-items3{
+            background-image: url(https://images.pexels.com/photos/1875480/pexels-photo-1875480.jpeg);
+            grid-area: wat;
+        }
+        #grid-items4{
+            background-image: url(https://images.pexels.com/photos/1316897/pexels-photo-1316897.jpeg);
+            grid-area: isl;
+        }
+        #grid-items5{
+            background-image: url(https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg);
+            grid-area: hill;
+        }
+        #grid-items6{
+            background-image: url(https://images.pexels.com/photos/457882/pexels-photo-457882.jpeg);
+            grid-area: bea;
+        }
+         #grid-items7{
+            background-image: url(https://images.pexels.com/photos/1529360/pexels-photo-1529360.jpeg);
+            grid-area: rain;
+        }
+        #grid-items8{
+            background-image: url(https://images.pexels.com/photos/167698/pexels-photo-167698.jpeg);
+    
+            grid-area: for;
+        }
+        #grid-items9{
+            background-image: url(https://images.pexels.com/photos/2100387/pexels-photo-2100387.jpeg);
+    
+            grid-area: des;
+        }
+        #grid-items10{
+            background-image: url(https://images.pexels.com/photos/1687530/pexels-photo-1687530.jpeg);
+    
+            grid-area: vol;
+        }
+        #grid-items11{
+            background-image: url(https://images.pexels.com/photos/346972/pexels-photo-346972.jpeg);
+    
+            grid-area: gl;
+        }
+        #grid-items12{
+            background-image: url(https://images.pexels.com/photos/36478/amazing-beautiful-beauty-blue.jpg);
+    
+            grid-area: land;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner1">
+            <div class="para">
+                <h1>Nature's Gallery</h1>
+                <ul>
+                    <li>Every thing i this world is beatifull</li>
+                    <li>You just need to look closer</li>
+                    <li>Capture the moment <i class="fa-solid fa-camera"></i></li>
+                    <p>Follow for more -> natures gallery <i class="fa-brands fa-instagram"></i> <i class="fa-brands fa-square-facebook"></i> <i class="fa-brands fa-youtube"></i> <i class="fa-brands fa-square-twitter"></i></p>
+                </ul>
+            </div>
+        </div>
+        <div class="inner2">
+            <div class="grid-items" id="grid-items1">Mountains</div>
+            <div class="grid-items" id="grid-items2">Ocean</div>
+            <div class="grid-items" id="grid-items3">Waterfalls</div>
+            <div class="grid-items" id="grid-items4">Island</div>
+            <div class="grid-items" id="grid-items5">Hills</div>
+            <div class="grid-items" id="grid-items6">Beach</div>
+            <div class="grid-items" id="grid-items7">Rain</div>
+            <div class="grid-items" id="grid-items8">Forest</div>
+            <div class="grid-items" id="grid-items9">Desert</div>
+            <div class="grid-items" id="grid-items10">Volcano</div>
+            <div class="grid-items" id="grid-items11">IceLand</div>
+            <div class="grid-items" id="grid-items12">Land</div>
+        </div>
+    </div>
+</body>
+</html>

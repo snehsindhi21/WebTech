@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        * {
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 300px;
+            height: 200px;
+            margin: 20px auto;
+            text-align: center;
+            
+            font-size: 24px;
+            color: white;
+            font-family: Arial, sans-serif;
+            border: 2px dashed black;
+            background-image: url('https://images.pexels.com/photos/35082978/pexels-photo-35082978.jpeg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        #box1{
+            background-origin: border-box;
+            background-clip: border-box;
+        }
+        #box2{
+            background-origin: padding-box;
+            background-clip: padding-box;
+        }
+        #box3{
+            background-origin: content-box;
+            background-clip: content-box;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Background Properties</h1>
+    <div id="box1" class="box" >box1</div>
+    <div id="box2" class="box">box2</div>
+    <div id="box3" class="box">box3</div>
+</body>
+</html>

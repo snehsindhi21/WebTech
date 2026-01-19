@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>Job Application Form</legend>
+            <table>
+                <tr>
+                    <td>
+                        <lable for="first">First Name</lable>
+                    </td>
+                    <td><input type="text" name="First Name" id="first" placeholder="Enter First Name" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="last">Last Name</lable>
+                    </td>
+                    <td><input type="text" name="Last Name" id="last" placeholder="Enter First Name" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="email">Email</lable>
+                    </td>
+                    <td><input type="email" id="email" name="Email" placeholder="Enter Email" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="phno.">Phone Number</lable>
+                    </td>
+                    <td><input type="number" id="phno." name="Phone Number" minlength="10" maxlength="10" placeholder="Enter Phone Number" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="DOB">Date of Birth</lable>
+                    </td>
+                    <td><input type="date" id="DOB" name="DOB" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="gender" >Gender</lable>
+                    </td>
+                    <td><input type="radio" name="Gender" id="gender" required>Male</td>
+                    <td><input type="radio" name="Gender" id="gender" required>Female</td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="add">Address</lable>
+                    </td>
+                    <td><textarea name="Address" id="add" rows="5" cols="20" required placeholder="Enter Address"></textarea></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="city">City</lable>
+                    </td>
+                    <td>
+                        <input type="text" list="cities" name="City" id="city" required>
+                        
+                        <datalist id="cities">
+                            <option value="Surat">Surat</option>
+                            <option value="Ahmedabad">Ahmedabad</option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Pune">Pune</option>
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="state">State</lable>
+                    </td>
+                    <td>
+                        <input type="text" list="states" name="State" id="state" required>
+                        
+                        <datalist id="states">
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Maharastra">Maharastra</option>
+                        </datalist>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="pin">Pin Code</lable>
+                    </td>
+                    <td><input type="number" name="PinCode" id="pin" required minlength="6" maxlength="6" placeholder="Enter PinCode"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="position">Position Applied For</lable>
+                    </td>
+                    <td>
+                        
+                        
+                        <select name="Position" required id="position">
+                            <option value="" disabled selected>--positions--</option>
+                            <option value="">Frontend</option>
+                            <option value="">Backend</option>
+                            <option value="">Database Management</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="resume">Upload Resume</lable>
+                    </td>
+                    <td><input type="file" name="Resume" id="resume" ></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="url">LinkedIn Profile</lable>
+                    </td>
+                    <td><input type="url" name="URL" id="url" required placeholder="Enter URL"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="start">Available Start Date</lable>
+                    </td>
+                    <td><input type="date" name="Start Date" id="start" required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="sal">Expected Salary</lable>
+                    </td>
+                    <td><input type="number" name="Salary" id="sal" required placeholder="Enter Expected Salary"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <lable for="relocatae">Willing to Relocate</lable>
+                    </td>
+                    <td>
+                        <select name="Relocate" required id="relocatae">
+                            <option value="" disabled selected>--Are you willing to relocatae--</option>
+                            <option value="">Yes</option>
+                            <option value="">No</option>
+                            
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button>Submit</button>
+                    </td>
+                    
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 600px;
+            height: 200px;
+            background-color: beige;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            color: white;
+            border-radius: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #box1{
+            order:2 ;
+        }
+        #box2{
+            order:1 ;
+        }
+        #box3{
+            order: 0;
+        }
+        #box4{
+            order: -1;
+        }
+        #box5{
+            order: -2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Order Child Property in Flex Box</h1>
+    <div class="parent">
+    <div class="box" id="box1">box1</div>
+    <div class="box" id="box2">box2</div>
+    <div class="box" id="box3">box3</div>
+    <div class="box" id="box4">box4</div>
+    <div class="box" id="box5">box5</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #demo{
+            height: 200px;
+            background-color: lightgray;
+            text-align: center;
+            line-height: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            
+            top: 0;
+            z-index: 10;
+        }
+        header{
+            width: 100%;
+            height: 60px;
+            background-color: gray;
+            position: sticky;
+            top: 0;
+            left: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        ul li{
+            list-style: none;
+            display: inline-block;
+            margin: 20px;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;}
+    </style>
+</head>
+<body>
+    <div id="demo"><h1><u>This is Demo of Sticky Position</u></h1></div>
+        <header>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Login</a></li>
+                <li><a href="">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div style="height:2000px; padding-top:80px;">
+        <h1><u> Scroll Down to see the Fixed Position Effect </u></h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur possimus impedit blanditiis saepe, consectetur libero similique totam! Quos optio, officia consequatur tempora alias, numquam id doloribus vel, debitis quibusdam illo!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dignissimos adipisci dolor nostrum laudantium at eveniet culpa alias dolores molestiae dicta quasi error eum, sit ipsam voluptates et repellat accusantium.</p>
+        </div>
+</body>
+</html>

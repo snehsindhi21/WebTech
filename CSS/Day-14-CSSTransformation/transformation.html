@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+            margin: 50px;
+            background-color: lightblue;
+            display: inline-block;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #b1:hover{
+            
+            background-color: coral;
+            transform: translateX(100px); 
+            /* transform: translateY(100px); */
+            /* transform: translate(100px, 100px); */
+             
+        }
+        #b2:hover{
+            background-color: coral;
+             transform: rotate(45deg); 
+             /* transform: rotateX(45deg);
+             transform: rotateY(45deg); 
+             transform: rotateZ(45deg); */
+        }
+        #b3:hover{
+            background-color: coral;
+            transform: scale(1.5);
+            /* transform: scaleX(1.5);
+            transform: scaleY(1.5); */
+        }  
+        #b4:hover{
+            transform: skew(20deg, 10deg);
+            /* transform: skewX(20deg);
+            transform: skewY(10deg); */
+            background-color: coral; 
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Transformations</h1>
+    <div id="b1">Box1</div>
+    <div id="b2">Box2</div>
+    <div id="b3">Box3</div>
+    <div id="b4">Box4</div>
+</body>
+</html>

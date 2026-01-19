@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        #head{
+            height: 200px;
+            background: url('https://images.pexels.com/photos/35133255/pexels-photo-35133255.jpeg') no-repeat  center /100% ;
+                  
+        }
+        h1{
+            margin-top:20px;
+            text-align: center;
+            color: black;
+            padding: 20px;
+        }
+        #main{
+            width: 100%;
+            margin: auto;
+            text-align: center;
+        }
+        .box{
+            width: 350px;
+            height: 250px;
+            margin: 20px;
+            display: inline-block;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+            transition: box-shadow 0.3s ease;
+            
+            border-radius: 10px;
+        }
+        .box:hover{
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.726);
+        }
+        #box1{
+            background: url('https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg') no-repeat top center/cover;
+        }
+        #box2{
+            background: url('https://images.pexels.com/photos/733745/pexels-photo-733745.jpeg') no-repeat center/cover ;
+        }
+        #box3{
+            background: url('https://images.pexels.com/photos/112460/pexels-photo-112460.jpeg') no-repeat center/cover ;
+        }
+        #box4{
+            background: url('https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg') no-repeat center/cover ;
+        }
+        #box5{
+            background: url('https://images.pexels.com/photos/136872/pexels-photo-136872.jpeg') no-repeat  center/cover ;
+        }
+        #box6{
+            background: url('https://images.pexels.com/photos/164654/pexels-photo-164654.jpeg') no-repeat center/cover ;
+        }
+        #box7{
+            background: url('https://images.pexels.com/photos/977003/pexels-photo-977003.jpeg') no-repeat center/cover ;
+        }
+        #box8{
+            background: url('https://images.pexels.com/photos/3764984/pexels-photo-3764984.jpeg') no-repeat center/cover;
+        }
+        .rent{
+            background-color: red;
+            color: white;
+            margin: 5px;
+            border-radius: 5px;
+            padding: 2px;
+            height: auto;
+            width: 90px;
+            text-align: center;
+        }
+        .sale{
+            background-color: orange;
+            color: white;
+            margin: 5px;
+            border-radius: 5px;
+            padding:2px ;
+            height: auto;
+            width: 90px;
+            text-align: center;
+        }
+        button{
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        butthon:hover{
+            background-color: lightgreen;
+        }
+        .black{
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            height: 120px;
+            width: 90%;
+            margin-top: 100px;
+            top: 100px;
+            background-clip: border-box;
+            margin-left: 20px;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .h{
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <section id="sec1" ><div id="head"></div></section>
+    <section id="sec2">
+        <h1> <u> Available Cars </u></h1>
+
+        
+    </section>
+    <section id="sec3">
+        <div id="main">
+        <div class="box" id="box1">
+            <div class="rent">FOR RENT</div>
+            <div class="black">
+                 <h1 class="h">Dodge Challenger</h1>
+                 
+                 <button>$/month</button>
+            </div>
+        </div>
+        <div class="box" id="box2">
+            <div class="sale">FOR SALE</div>
+            <div class="black">
+                 <h1 class="h">Mustang</h1>
+                 
+                 <button>$</button>
+            </div>
+        </div>
+        <div class="box" id="box3">
+            <div class="rent">FOR RENT</div>
+            <div class="black">
+                 <h1 class="h">Mercedes-AMG GT</h1>
+                 <p></p>
+                 <button>$/month</button>
+            </div>
+        </div>
+        <div class="box" id="box4">
+            <div class="sale">FOR SALE</div>
+            <div class="black">
+                 <h1 class="h">Alfa Romeo 4C</h1>
+                 <p></p>
+                 <button>$</button>
+            </div>
+        </div>
+        <div class="box" id="box5">
+            <div class="rent">FOR RENT</div>
+            <div class="black">
+                 <h1 class="h">Mercedes-Benz SL</h1>
+                 <p></p>
+                 <button>$/month</button>
+            </div>
+        </div>
+        <div class="box" id="box6">
+            <div class="sale">FOR SALE</div>
+            <div class="black">
+                 <h1 class="h">G-Wagen</h1>
+                 <p></p>
+                 <button>$</button>
+            </div>
+        </div>
+        <div class="box" id="box7">
+            <div class="rent">FOR RENT</div>
+            <div class="black">
+                 <h1 class="h">Maserati GranTurismo</h1>
+                 <p></p>
+                 <button>$/month</button>
+            </div>
+        </div>
+        <div class="box" id="box8">
+            <div class="sale">FOR SALE</div>
+            <div class="black">
+                 <h1 class="h">Rolls-Royce Ghost</h1>
+                 <p></p>
+                 <button>$</button>
+            </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>

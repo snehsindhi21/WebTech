@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1{
+            text-align: center;
+            margin: 20px;
+        }
+        .loader{
+            width: 300px;
+            height: 20px;
+            border: 2px solid lightgrey;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .progress-bar{
+            width: 0%;
+            height: 100%;
+            background-color: blue;
+            animation: progress 5s linear infinite;
+        }
+        @keyframes progress {
+            0%{
+                width: 0%;
+            }
+            100%{
+                width: 100%;
+            }
+        }
+        p{
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Loading Bar Animation</h1>
+    <div class="loader">
+        <div class="progress-bar"></div>
+    </div>
+    <p>Loading...</p>
+</body>
+</html>

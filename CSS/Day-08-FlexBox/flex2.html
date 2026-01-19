@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1,h2{
+            text-align: center;
+        }
+        .parent{
+            margin: 20px auto;
+            width: 700px;
+            height: 200px;
+            background-color: teal;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+        }
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #parent1{
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        #parent2{
+            flex-direction: column;
+            justify-content: space-evenly;
+            height: 600px;
+        }
+        #parent3{
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+        }
+        #parent4{
+            flex-direction: column-reverse;
+            justify-content: space-evenly;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex Direction</h1>
+    <h2>flex-direction Row(default)</h2>
+    <div class="parent" id="parent1">
+        <div class="child" id="child1">Child 1</div>
+        <div class="child" id="child2">Child 2</div>
+        <div class="child" id="child3">Child 3</div>
+        <div class="child" id="child4">Child 4</div>
+        <div class="child" id="child5">Child 5</div>
+    </div>
+    <h2>flex-direction Column</h2>
+    <div class="parent" id="parent2">
+        <div class="child" id="child1">Child 1</div>
+        <div class="child" id="child2">Child 2</div>
+        <div class="child" id="child3">Child 3</div>
+        <div class="child" id="child4">Child 4</div>
+        <div class="child" id="child5">Child 5</div>
+    </div>
+    <h2>flex-direction Row Reverse</h2>
+    <div class="parent" id="parent3">
+        <div class="child" id="child1">Child 1</div>
+        <div class="child" id="child2">Child 2</div>
+        <div class="child" id="child3">Child 3</div>
+        <div class="child" id="child4">Child 4</div>
+        <div class="child" id="child5">Child 5</div>
+    </div>
+    <h2>flex-direction Column Reverse</h2>
+    <div class="parent" id="parent4">
+        <div class="child" id="child1">Child 1</div>
+        <div class="child" id="child2">Child 2</div>
+        <div class="child" id="child3">Child 3</div>
+        <div class="child" id="child4">Child 4</div>
+        <div class="child" id="child5">Child 5</div>
+    </div>
+</body>
+</html>

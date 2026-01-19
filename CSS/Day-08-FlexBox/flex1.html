@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        .parent{
+            margin: 20px auto;
+            width: 800px;
+            height: 300px;
+            background-color: red;
+            border-radius: 10px;
+            display: flex;
+            /* justify-content: center; */
+            /* justify-content: flex-start; */
+            /* justify-content: flex-end; */
+            /* justify-content: space-between; */
+            /* justify-content: space-around; */
+            /* justify-content: space-evenly; */
+            /* align-items: start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+        }
+        #par1{
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #par2{
+            justify-content: center;
+            align-items: center;
+        }
+        #par3{
+            justify-content: flex-start;
+            align-items: center;
+        }
+        #par4{
+            justify-content: flex-end;
+            align-items: center;
+        }
+        #par5{
+            justify-content: space-around;
+            align-items: center;
+        }
+        #par6{
+            justify-content: space-between;
+            align-items: center;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: teal;
+            color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flex Box in CSS</h1>
+    <h1>justify-content space evenly</h1>
+    <div class="parent" id="par1">
+        <div class="box" id="box">Child-1</div>
+        <div class="box" id="box">Child-2</div>
+        <div class="box" id="box">Child-3</div>
+        <div class="box" id="box">Child-4</div>
+        <div class="box" id="box">Child-5</div>
+    </div>
+    <h1>Flex Box in CSS</h1>
+    <h1>justify-content center</h1>
+    <div class="parent" id="par2">
+        <div class="box" id="box">Child-1</div>
+        <div class="box" id="box">Child-2</div>
+        <div class="box" id="box">Child-3</div>
+        <div class="box" id="box">Child-4</div>
+        <div class="box" id="box">Child-5</div>
+    </div>
+    <h1>Flex Box in CSS</h1>
+    <h1>justify-content default start flex</h1>
+    <div class="parent" id="par3">
+        <div class="box" id="box">Child-1</div>
+        <div class="box" id="box">Child-2</div>
+        <div class="box" id="box">Child-3</div>
+        <div class="box" id="box">Child-4</div>
+        <div class="box" id="box">Child-5</div>
+    </div>
+    <h1>Flex Box in CSS</h1>
+    <h1>justify-content default end flex</h1>
+    <div class="parent" id="par4">
+        <div class="box" id="box">Child-1</div>
+        <div class="box" id="box">Child-2</div>
+        <div class="box" id="box">Child-3</div>
+        <div class="box" id="box">Child-4</div>
+        <div class="box" id="box">Child-5</div>
+    </div>
+    <h1>Flex Box in CSS</h1>
+    <h1>justify-content space around</h1>
+    <div class="parent" id="par5">
+        <div class="box" id="box">Child-1</div>
+        <div class="box" id="box">Child-2</div>
+        <div class="box" id="box">Child-3</div>
+        <div class="box" id="box">Child-4</div>
+        <div class="box" id="box">Child-5</div>
+    </div>
+    <h1>Flex Box in CSS</h1>
+    <h1>justify-content space between</h1>
+    <div class="parent" id="par6">
+        <div class="box" id="box">Child-1</div>
+        <div class="box" id="box">Child-2</div>
+        <div class="box" id="box">Child-3</div>
+        <div class="box" id="box">Child-4</div>
+        <div class="box" id="box">Child-5</div>
+    </div>
+</body>
+</html>
+
+<!-- Its is one Dimensional Layout -->

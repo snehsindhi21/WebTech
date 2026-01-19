@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        body{
+            background-image: radial-gradient(circle, red, yellow, green, blue);
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            font-size: 30px;
+            color: white;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+        #box1{
+            background-image: radial-gradient(circle, red , yellow);
+        }
+        #box2{
+            background-image: radial-gradient(ellipse at center, yellow , green);
+        }
+        #box3{
+            background-image: radial-gradient(circle at top left, green , blue);
+        }
+        #box4{
+            background-image: repeating-radial-gradient(blue 0% 10%, white 10% 15%);
+        }
+        #box5{
+            background-image: radial-gradient(circle, green 0% 33% , white 33% 66% , orange 66% 100%);
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+        <h1><u>
+        Radial Gradient
+    </u></h1>
+    <div class="box" id="box1">1</div>
+    <div class="box" id="box2">2</div>
+    <div class="box" id="box3">3</div>
+    <div class="box" id="box4">4</div>
+    <div class="box" id="box5">5</div>
+</body>
+</html>

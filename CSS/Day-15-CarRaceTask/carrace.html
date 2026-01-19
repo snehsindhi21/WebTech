@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        h1{
+            margin: 10px;
+            font-size: 35px;
+            text-align: center;
+        }
+        .race-track{
+            width: 100%;    
+            padding: 10px 0px;
+        }
+        .racing-path{
+            width: 90%;
+            height: 80px;
+            border: 3px dashed black;
+            margin: 50px auto;
+            position: relative;
+            border-radius: 50px;
+            /* background-color: black; */
+        }
+        h2{
+            position: absolute;
+            top: -35;
+            left: 20px;
+        }
+        img{
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 100px;
+            border-radius: 20px;
+            animation: driveCars 30s forwards;
+        }
+        @keyframes driveCars {
+            from{
+                left: 10px;
+            }
+            to{
+                left: calc(90% - 10px);
+            }
+        }
+        .racing-path:nth-child(1) img{
+            animation-timing-function: linear;
+        }
+        .racing-path:nth-child(2) img{
+            animation-timing-function: ease;
+        }
+        .racing-path:nth-child(3) img{
+            animation-timing-function: ease-in;
+        }
+        .racing-path:nth-child(4) img{
+            animation-timing-function: ease-out;
+        }
+        .racing-path:nth-child(5) img{
+            animation-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Baburao Car Racing</h1>
+    <div class="race-track">
+        <div class="racing-path">
+            <h2>linear - Constant Speed</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRr_-62a40u3lSIyRP5EKOjJeQiZROwTeVCOQ&s" alt="">
+        </div>
+        <div class="racing-path">
+            <h2>ease (default) - slow -> fast -> slow</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj3SvFYYPb_6ka6bsgg5M6dgu3sxCLrRf5PA&s" alt="">
+        </div>
+        <div class="racing-path">
+            <h2>ease-in - slow start, fast end</h2>
+            <img style="height: 80px;" src="https://nationalzoo.si.edu/sites/default/files/styles/square_large/public/2025-01/20241030-817A8773-16RP.jpg?h=f6ccde7b&itok=m27pXZwZ" alt="">
+        </div>
+        <div class="racing-path">
+            <h2>ease-out - fast start, slow end</h2>
+            <img src="https://cff2.earth.com/uploads/2022/09/12065513/Zoo-animals-scaled.jpg" alt="">
+        </div>
+        <div class="racing-path">
+            <h2>ease-in-out - slow start, fast middle, slow end</h2>
+            <img src="https://images.pexels.com/photos/47547/squirrel-animal-cute-rodents-47547.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        .parent{
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+            display: grid;
+            gap: 10px;
+            grid-template-areas: "head head head head"
+                                "side1 side1 side2 side2" 
+                                "side1 side1 side2 side2" 
+                                "sec sec sec sec"
+                                "sec sec sec sec"
+                                "main main main main"
+                                "foot foot foot foot";
+        }
+        .grid-items{
+            background-color: wheat;
+            border: 1px solid white;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            font-size: 30px; 
+            
+        }
+        #grid-items1{
+            grid-area: head;
+        }
+        #grid-items2{
+            grid-area: side1;
+        }
+        #grid-items3{
+            grid-area: side2;
+        }
+        #grid-items4{
+            grid-area: sec;
+        }
+        #grid-items5{
+            grid-area: main;
+        }
+        #grid-items6{
+            grid-area: foot;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="grid-items" id="grid-items1">Header</div>
+        <div class="grid-items" id="grid-items2">Aside-1</div>
+        <div class="grid-items" id="grid-items3">Aside-2</div>
+        <div class="grid-items" id="grid-items4">Section</div>
+        <div class="grid-items" id="grid-items5">Main</div>
+        <div class="grid-items" id="grid-items6">Footer</div>
+    </div>
+</body>
+</html>

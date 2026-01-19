@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+           
+            
+        }
+        #box1{
+            background-color: lightblue;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+        #box2{
+            
+            background-color: lightcoral;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }   
+        #box3{
+            background-color: maroon;
+            position: absolute;
+            right: 0px;
+        }
+        #box4{
+            background-color: blue;
+            position: absolute;
+            left: calc(50% - 50px);
+            top: calc(50% - 50px);
+        }
+        #box5{
+            background-color: green;
+            position: absolute;
+            bottom: 0px;
+            right: 0px;
+        }
+        #box6{
+            background-color: orange;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+        }
+       
+    </style>
+</head>
+<body>
+    <!-- .parent>.box#box$*5{box-$} -->
+    <h1>Absolute Position In CSS</h1><br>
+    <div class="parent">
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+    <div class="box" id="box6"></div>
+    </div>
+</body>
+</html>
