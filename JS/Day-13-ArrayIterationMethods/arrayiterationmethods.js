@@ -110,6 +110,59 @@ console.log(groceryProducts);
   { name: 'Amul Butter (500g)', price: 260, category: 'Groceries' },
   { name: 'Tata Salt (1kg)', price: 30, category: 'Groceries' }
 ] */
+//! Difference between map() and filter()
+// map() - it transforms each and every element of the array and returns a new array of same length as orignal array.
+// filter() - it filters out elements based on some condition and returns a new array which may or may not be of same length as orignal array.
+mixedNumbers.map((num)=>{
+  if (num % 2 ==0){
+    return num;
+  }
+  else {
+    return odd;
+  }
+})//  [10, odd, 20, odd, 30, odd, 40, odd, 50] 
+mixedNumbers.filter((num)=>{
+  return num % 2 ==0;
+})// [10,20,30,40,50]
+
 
 //~ 3. reduce()
+//? Syntax: array.reduce(callback_function, initialValue);
+//*
+//* The reduce() method is used to reduce the array to a single value by performing some operation on each and every element of the array.
+//* It does not create a new array.
+//array.reduce((accumulator, currentValue, currentIndex, currentArray) => {}, initialValue);
+// Return Type: Single Value
+let values = [1,2,3,4,5];
+let sum = values.reduce((accumulator, cValue, cIndex, cArray)=>{
+  console.log("acc:"+accumulator+"cValue:"+cValue+"cIndex:"+cIndex);
+  return accumulator + cValue;
+});
+console.log(sum); // 15
+// initialValue is optional
+
+//!RealTime Example- Add to Cart
+let cart = [
+  { name:"mobile", price: 20000, pty:1 },
+  { name:"smartwatch", price: 5000, pty:2 },
+  { name:"earbuds", price: 2000, pty:3 },
+];
+let totalAmount = cart.reduce((accumulator, product)=>{
+  return accumulator + (product.price * product.pty);
+},0);
+console.log(totalAmount); // 34000
+
+
 //~ 4. forEach()
+//? Syntax: array.forEach(callback_function);
+//* The forEach() method is used to iterate over an array and perform some operation for each and every element present inside the array.
+//* It does not create a new array.
+//array.forEach((currentValue, currentIndex, currentArray) => {});
+// Return Type: undefined
+let fruits = ["Apple","Banana","Mango","Orange"];
+fruits.forEach((cValue, cIndex, cArray)=>{
+    console.log(cValue);
+});
+//! Key Difference between forEach() and map()
+//* The map() method will return a new array but forEach() method will return undefined.
+//* Map() is used when we want to transform the array and create a new array whereas forEach() is used when we want to iterate each element without creating a new array.
