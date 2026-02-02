@@ -71,19 +71,19 @@ console.log(numArr);
 
 //? 2. pop():
 numArr.pop();
-console.log(numArr);
+console.log(numArr);//[10,20,30,40,50,60,70,80,90]
 
 //? 3. unshift():
 numArr.unshift("hello");
-console.log(numArr);
+console.log(numArr);//["hello",10,20,30,40,50,60,70,80,90]
 
 //? 4. shift():
 numArr.shift();
 numArr.shift();
-console.log(numArr);
+console.log(numArr);//[20,30,40,50,60,70,80,90]
 
 //? 5. slice(startIndex, endIndex):
-console.log(numArr.slice(1, 7));
+console.log(numArr.slice(1, 7));//[30,40,50,60,70,80]
 
 //? 6. splice(startIndex, deleteCount, [newEle]):
 let heros = ["Iron Man", "Hulk", "Thor", "Deadpool", "Blue Bettle", "Wanda"];
