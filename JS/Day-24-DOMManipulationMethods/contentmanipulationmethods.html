@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Content Manipulation Properties</h1>
+    <button id="btn">Click Me</button>
+    <ul id="list">
+        <li>List-1</li>
+        <li style="display: none;">List-2</li>
+        <li>List-3</li>
+    </ul>
+    <h2 id="head2">Hello</h2>
+    <div id="box">
+        <h3>Already content is present</h3>
+    </div>
+    <button id="create">Create</button>
+    <script>
+        let btn = document.getElementById("btn");
+        console.log(btn);
+        
+        // textContent: It will get or the actual content present inside the element.
+        console.log(btn.textContent);
+
+        btn.textContent = "Updated Value";
+        console.log(btn);
+        
+        //innerText:
+        console.log(btn.innerText);
+        btn.innerText = "Value Updated by innerText";
+
+        let list = document.getElementById("list");
+        console.log(list);
+        
+        console.log(list.textContent);
+        console.log(list.innerText);
+        
+        //innerHTML:
+        let head2 = document.getElementById("head2");
+        console.log(head2);
+        console.log(head2.innerHTML);
+        console.log(head2.outerHTML);
+        //head2.innerHTML = "World"
+        let box = document.getElementById("box");
+        document.getElementById("create").addEventListener("click",()=>{
+            box.innerHTML += `<p> This paragraph is created by using innerHTML</p>`;
+        });
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons for modern SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Custom Scrollbar for the right panel */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        .glass-input {
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .glass-input:focus {
+            background: rgba(0, 0, 0, 0.3);
+            border-color: rgba(96, 165, 250, 0.6);
+            outline: none;
+            box-shadow: 0 0 15px rgba(96, 165, 250, 0.2);
+        }
+
+        .glass-input.error {
+            border-color: rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.2);
+        }
+
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slideIn 0.4s ease-out forwards;
+        }
+
+        .task-item:hover {
+            transform: translateY(-2px) scale(1.01);
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .list-item {
+            color: white;
+            font-size: 1rem;
+            flex-grow: 1;
+            padding-right: 1rem;
+            word-break: break-word;
+        }
+
+        .deleting {
+            background: rgba(239, 68, 68, 0.15);
+            color: #fca5a5;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        .deleting:hover {
+            background: rgba(239, 68, 68, 0.8);
+            color: white;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body class="bg-[url('https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center min-h-screen flex items-center justify-center p-4 md:p-8">
+    
+    <!-- Overlay for better readability of the glass effect -->
+    <div class="fixed inset-0 bg-gradient-to-br from-blue-900/80 via-indigo-900/80 to-slate-900/80 pointer-events-none"></div>
+
+    <!-- Main Container -->
+    <main class="relative z-10 w-full max-w-5xl h-[85vh] md:h-[700px] glass-panel rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-12 shadow-2xl">
+        
+        <!-- LEFT SIDE: Static Control Center (4 columns) -->
+        <section class="col-span-1 md:col-span-5 p-8 md:p-10 flex flex-col justify-center relative border-b md:border-b-0 md:border-r border-white/10 bg-gradient-to-br from-white/10 to-transparent">
+            <!-- Decorative circle -->
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-blue-500 rounded-full mix-blend-overlay filter blur-3xl opacity-50 animate-pulse"></div>
+
+            <div class="relative z-10">
+                <div class="mb-2 flex items-center gap-2 text-blue-300 font-medium tracking-wide uppercase text-xs">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    <span>Productivity Hub</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight drop-shadow-sm">
+                    Focus <br/> on Today.
+                </h1>
+                
+                <p class="text-blue-100/70 mb-10 leading-relaxed font-light">
+                    Clear your mind. Organize your goals. Design your success one task at a time.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="relative group">
+                        <i data-lucide="edit-3" class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5 group-focus-within:text-blue-400 transition-colors"></i>
+                        <input 
+                            type="text" 
+                            id="task-input" 
+                            class="glass-input w-full pl-12 pr-4 py-4 rounded-xl text-lg placeholder-white/30 backdrop-blur-sm" 
+                            placeholder="What's next on the list?" 
+                            autocomplete="off"
+                        >
+                    </div>
+                    
+                    <button 
+                        id="addTaskBtn"
+                        class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-4 rounded-xl shadow-lg shadow-blue-600/30 transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 group"
+                    >
+                        <span>Add New Task</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-auto pt-10 text-center md:text-left">
+                <p class="text-xs text-white/30 font-light">
+                    &copy; 2026 Design Concept
+                </p>
+            </div>
+        </section>
+
+        <!-- RIGHT SIDE: Dynamic Task List (8 columns) -->
+        <section class="col-span-1 md:col-span-7 bg-black/20 backdrop-blur-3xl flex flex-col h-full overflow-hidden">
+            <!-- Header for List -->
+            <div class="p-6 md:p-8 pb-4 flex justify-between items-end border-b border-white/5">
+                <div>
+                    <h2 class="text-2xl font-bold text-white">Your Tasks</h2>
+                </div>
+                <div class="flex gap-2">
+                    <button id="clearAllBtn" class="text-xs text-white/40 hover:text-white hover:bg-white/10 px-3 py-1.5 rounded-lg transition-colors" title="Clear all tasks">
+                        Clear All
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scrollable List Area -->
+            <div class="flex-1 overflow-y-auto custom-scrollbar p-6 md:p-8 pt-2" id="scroll-container">
+                <!-- Task List Container -->
+                <div id="task-list" class="space-y-3">
+                    <!-- Tasks will be injected here via JS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Custom Toast Notification Container -->
+    <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        let taskInput = document.getElementById("task-input");
+        let addTaskBtn = document.getElementById("addTaskBtn");
+        let taskList = document.getElementById("task-list");
+        let clearAllBtn = document.getElementById("clearAllBtn");
+
+        addTaskBtn.addEventListener("click", todo);
+        
+        // Listen for Enter key specifically on the input
+        taskInput.addEventListener("keyup", (e) => {
+            if (e.key === "Enter") {
+                todo();
+            }
+        });
+
+        // Add Listener for Clear All
+        clearAllBtn.addEventListener("click", () => {
+            if (taskList.children.length > 0) {
+                if (confirm("Clear all tasks?")) {
+                    taskList.innerHTML = "";
+                }
+            }
+        });
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'bg-red-500 text-white px-6 py-3 rounded-xl shadow-lg mb-2 animate-[slideIn_0.3s_ease-out] flex items-center gap-2';
+            toast.innerHTML = `<i data-lucide="alert-circle" class="w-5 h-5"></i> <span>${message}</span>`;
+            
+            container.appendChild(toast);
+            lucide.createIcons(); // render icon in toast
+
+            // Remove after 3 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(20px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        function todo() {
+            let taskValue = taskInput.value.trim();
+
+            if (taskValue === "") {
+                // Visual feedback instead of alert
+                taskInput.classList.add('error');
+                taskInput.placeholder = "Please enter a task first...";
+                showToast("Please enter a task first");
+                
+                setTimeout(() => {
+                    taskInput.classList.remove('error');
+                    taskInput.placeholder = "What's next on the list?";
+                }, 2000);
+            } else {
+                let taskItem = document.createElement("div");
+                taskItem.className = "task-item";
+
+                let span = document.createElement("span");
+                span.className = "list-item";
+                span.textContent = taskValue;
+
+                let removeTaskBtn = document.createElement("button");
+                removeTaskBtn.className = "deleting";
+                removeTaskBtn.textContent = "Delete Task";
+
+                taskList.prepend(taskItem); // Add to top
+                taskItem.appendChild(span);
+                taskItem.appendChild(removeTaskBtn);
+
+                removeTaskBtn.addEventListener("click", () => {
+                    // Add fade out effect
+                    taskItem.style.opacity = '0';
+                    taskItem.style.transform = 'translateX(20px)';
+                    setTimeout(() => {
+                        if (taskItem.parentNode) {
+                            taskList.removeChild(taskItem);
+                        }
+                    }, 300);
+                });
+
+                taskInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
