@@ -1,0 +1,70 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f7f6; /* Soft light gray background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  border-top: 8px solid #4f46e5; /* Indigo accent border */
+}
+
+label {
+  color: #3730a3; /* Deep Indigo */
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: -10px; /* Pulls label closer to its input */
+}
+
+input {
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #6366f1; /* Lighter Indigo on focus */
+}
+
+button {
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.1s ease;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #4338ca; /* Darker Indigo */
+}
+
+button:active {
+  transform: scale(0.98);
+}

@@ -34,45 +34,42 @@ myPromise
         console.log(error);
         
     });
-    
-
-//~ 2. By using async and await keyword
 
 //! What is callback hell?
 //* Callback hell happens when you have multiple asynchrnous operations that depend on each other and you nest callbacks inside callbacks inside callbacks.
 
-function getUser(id, callback) {
-    setTimeout(()=>{
-        let user ={ id: id, name: "jhon", role: "user"};
-        callback(user)
-    },1000);    
-}
+// function getUser(id, callback) {
+//     setTimeout(()=>{
+//         let user ={ id: id, name: "jhon", role: "user"};
+//         callback(user)
+//     },1000);    
+// }
 
-function addToCart(user, callback) {
-    setTimeout(()=>{
-        let orders =["order-1","order-2"];
-        callback(orders)
-    }, 2000);    
-}
+// function addToCart(user, callback) {
+//     setTimeout(()=>{
+//         let orders =["order-1","order-2"];
+//         callback(orders)
+//     }, 2000);    
+// }
 
-function orderDetails(order, callback) {
-    setTimeout(()=>{
-        let orderInfo ={ product: order, price:500};
-        callback(orderInfo)
-    },3000);    
-}
+// function orderDetails(order, callback) {
+//     setTimeout(()=>{
+//         let orderInfo ={ product: order, price:500};
+//         callback(orderInfo)
+//     },3000);    
+// }
 
-let data = getUser(1,(user)=>{
-    console.log(user);
-    addToCart(user,(orders)=>{
-        console.log("orders:",orders);
-        orderDetails(orders[0],()=>{
-            console.log("orders[0]:",orders[0]);
-            console.log("Order Completed");
+// let data = getUser(1,(user)=>{
+//     console.log(user);
+//     addToCart(user,(orders)=>{
+//         console.log("orders:",orders);
+//         orderDetails(orders[0],()=>{
+//             console.log("orders[0]:",orders[0]);
+//             console.log("Order Completed");
             
-        });
-    });
-});  
+//         });
+//     });
+// });  
 
 function getUser(id) {
   return new Promise((resolve) => {
@@ -99,21 +96,42 @@ function orderDetails(order) {
 }
 
 //! Promise Chaining:
-let fun = getUser(1);
-console.log(fun);
-fun
-  .then((user) => {
-    console.log(user);
-    return addToCart(user);
-  })
-  .then((orders) => {
-    console.log(orders);
-    return orderDetails(orders[0]);
-  })
-  .then((orderInfo) => {
-    console.log(orderInfo);
-    console.log("order Completed");
-  })
-  .catch((error) => {
-    console.log("Something went wrong:", error);
-  });
+// let fun = getUser(1);
+// console.log(fun);
+// fun
+//   .then((user) => {
+//     console.log(user);
+//     return addToCart(user);
+//   })
+//   .then((orders) => {
+//     console.log(orders);
+//     return orderDetails(orders[0]);
+//   })
+//   .then((orderInfo) => {
+//     console.log(orderInfo);
+//     console.log("order Completed");
+//   })
+//   .catch((error) => {
+//     console.log("Something went wrong:", error);
+//   });
+
+
+  //~ 2. By using async and await keyword
+  //*  
+
+    async function handlePromise() {
+        try {
+          let user = await getUser(1);
+          console.log(user);
+          let orders = await addToCart(user);
+          console.log(orders);
+          let orderInfo = await orderDetails(orders[0]);
+          console.log(orderInfo);
+
+        } catch (error) {
+          console.log(error);
+          
+        }    
+    }
+
+    handlePromise();
