@@ -26,4 +26,4 @@ let fetchUserData = async ()=>{
         
     }
 }
-fetchUserData();
+fetchUserData(); 
